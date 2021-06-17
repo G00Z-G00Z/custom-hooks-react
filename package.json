@@ -1,0 +1,25 @@
+{
+	"name": "custom-hooks-react",
+	"version": "1.0.0",
+	"description": "Custom hooks de react",
+	"main": "useFetch.js",
+	"dependencies": {
+		"react": "^17.0.2"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "tsc"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/G00Z-G00Z/custom-hooks-react.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/G00Z-G00Z/custom-hooks-react/issues"
+	},
+	"homepage": "https://github.com/G00Z-G00Z/custom-hooks-react#readme"
+}
