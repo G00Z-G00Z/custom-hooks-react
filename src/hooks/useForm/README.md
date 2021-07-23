@@ -11,14 +11,7 @@ Example:
 ```
 type formValues = {[key: string] : any}
 
-type formData = {
-    values : formValues, 
-    handleInputChange : Function, 
-    resetForm : Function
-}
-
-
-const fields = {name : "", description: "", age : 0}
+const fields : formValues = {name : "", description: "", age : 0}
 {values , handleInputChange, resetForm} = useForm(fields)
 const { name, age, description } = values
 
