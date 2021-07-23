@@ -17,12 +17,10 @@ type formData = {
     resetForm : Function
 }
 
-export const useForm = (initialState : formValues = {} ) : formData
 
-{values , handleInputChange, resetForm} = useForm({name : "", description: "", age : 0})
-const {formValues, handleInputChange} = useForm(fields)
-
-const { name, age, description } = formValues
+const fields = {name : "", description: "", age : 0}
+{values , handleInputChange, resetForm} = useForm(fields)
+const { name, age, description } = values
 
 
 
@@ -33,7 +31,7 @@ const { name, age, description } = formValues
                         placeholder="Tu nombre"
                         autoComplete="off"
                         value={name}
-                        onChange={handleInputChange}
+                        onChange={e => handleInputChange(e)}
                     ></input>
 ```
 
