@@ -12,7 +12,7 @@ Example:
 type formValues = {[key: string] : any}
 
 const fields : formValues = {name : "", description: "", age : 0}
-{values , handleInputChange, resetForm} = useForm(fields)
+const {values , handleInputChange, resetForm} = useForm(fields)
 const { name, age, description } = values
 
 
