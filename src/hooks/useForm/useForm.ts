@@ -1,41 +1,19 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
+// Credito a Fernando Herrera en su curso de: React Native Aplicaciones Nativas para IOS y Android
 
-type formValues = {[key: string] : any}
+export const useForm = <T extends Object>(initialState: T) => {
+  const [formulario, setFormulario] = useState<T>(initialState);
 
-type formData = {
-    values : formValues, 
-    handleInputChange : Function, 
-    resetForm : Function
-}
+  const onChange = (newValue: string, campo: keyof T) => {
+    setFormulario({
+      ...formulario,
+      [campo]: newValue,
+    });
+  };
 
-export const useForm = (initialState : formValues = {} ) : formData => {
-
-    const [values, setValues] = useState(initialState)
-
-    const resetForm = () : void => {
-        setValues(initialState)
-    }
-
-    interface inputWithNames {
-        target : {
-            name : string, 
-            value : any
-        }, 
-        preventDefault : Function
-    }
-
-    const handleInputChange = (e :inputWithNames) => {
-        e.preventDefault()
-        const  target  :  {
-            name : string, 
-            value : string}
-         = e.target
-        setValues({
-            ...values,
-            [target.name]: target.value
-        })
-    }
-
-
-    return { values, handleInputChange, resetForm }
-}
+  return {
+    ...formulario,
+    formulario,
+    onChange,
+  };
+};
